@@ -1,7 +1,6 @@
 "use client"
 
 import React, { useState, useEffect } from "react";
-import { Header } from "@/components/header"
 
 
 export default function Login() {
@@ -26,11 +25,10 @@ export default function Login() {
     }, [name, password])
     return (
         <>
-            <Header />
-            <p>Ayoyoo</p>
-            <input onChange={(e) => { setName(e.target.value) }} type="text" placeholder="Name" className=" space-y-4 m-4 border-2 w-1/2"></input>
-            <input onChange={(e) => { setPassword(e.target.value) }} type="password" placeholder="Password" className=" space-y-4 m-4 border-2 w-1/2"></input>
-            <button onClick={handleSubmit} className=" w-1/2 bg-blue-400 m-4 p-2">{loading ? 'Process Login...' : 'Login'}</button>
+            <p>Login Page</p>
+            <input className=" border-2 border-blue-800 p-2 my-2 w-1/2" onChange={(e) => { setName(e.target.value) }} type="text" placeholder="Name"></input>
+            <input className=" border-2 border-blue-800 p-2 my-2 space-y-4 w-1/2" onChange={(e) => { setPassword(e.target.value) }} type="password" placeholder="Password" ></input>
+            <button onClick={handleSubmit} className=" p-2 w-1/2 bg-blue-400 m-4">{loading ? 'Process Login...' : 'Login'}</button>
             <p className=" text-center">Halo, {name}</p>
             <p className=" text-center">Passwordmu: {password}</p>
             {message !== null ? <div>{message}</div> : null}

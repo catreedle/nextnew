@@ -10,6 +10,7 @@ export const Header = () => {
                     <Link className=' px-4' href="/">Home</Link>
                     <Link className=' px-4' href="/dashboard">Dashboard</Link>
                     <Link className=' px-4' href="/login">Login</Link>
+                    <Link className=' px-4' href="/register">Register</Link>
                 </nav>
             </div>
         </>
