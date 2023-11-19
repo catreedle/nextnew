@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { Header } from '@/components/header'
 import { Content } from '@/components/content'
 import { Footer } from '@/components/footer'
+import Link from 'next/link'
 
 const apiKey = process.env.API_KEY
 
@@ -36,12 +37,16 @@ export default async function Home() {
       <Header />
       <div className=' grid grid-cols-1 lg:grid-cols-3 space-4'>
         {plant_array.map(({ id, plant_name, url }) => {
-          return <Content key={id}
+          return <div><Content key={id}
             name={plant_name}
             age={id}
             url={url}
             gender={'Binary'}
           />
+            <Link href={`/${id}`}>
+              <button className=' bg-sky-500 p-2'>View Plant</button>
+            </Link>
+          </div>
         })}
       </div>
       <Footer />
